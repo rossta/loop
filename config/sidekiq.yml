@@ -1,0 +1,10 @@
+---
+:verbose: true
+:environment: development
+:concurrency: 5
+:queues:
+  - [broadcast, 9]
+  - [mailer,    7]
+  - [default,   5]
+  - [analytics, 3]
+  - [low,       1]
