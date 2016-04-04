@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :schedules
 
   require "sidekiq/web"
-  require "sidetiq/web"
+  # require "sidetiq/web"
   mount Sidekiq::Web => "/sidekiq"
 
   # The priority is based upon order of creation: first created -> highest priority.

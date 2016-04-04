@@ -7,19 +7,16 @@ gem "rails", "4.2.6"
 gem "pg", "~> 0.15"
 
 gem "sass-rails", "~> 5.0"
-
 gem "uglifier", ">= 1.3.0"
-
+gem "jquery-rails"
 gem "sprockets-es6"
+gem "turbolinks"
+gem "react_on_rails", "~> 5"
 
 gem "active_model_serializers", "~> 0.10.0.rc1"
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem "therubyracer", platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem "jquery-rails"
-gem "turbolinks"
 
 gem "sdoc", "~> 0.4.0", group: :doc
 
@@ -48,7 +45,7 @@ gem "twitter"
 
 gem "sinatra", require: false
 gem "sidekiq"
-gem "sidetiq"
+# gem "sidetiq"
 
 gem "ice_cube"
 

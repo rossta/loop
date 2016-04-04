@@ -1,5 +1,5 @@
 web: bundle exec puma -C config/puma.rb -p $PORT
-# sidekiq: bundle exec sidekiq -C config/sidekiq.yml
+sidekiq: bundle exec sidekiq -C config/sidekiq.yml
 
 # make sure processes run in the foreground
 # thin:         bundle exec thin start -p $PORT

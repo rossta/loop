@@ -6,18 +6,18 @@ account.nickname = ENV.fetch('TWITTER_NICKNAME')
 account.name = ENV.fetch('TWITTER_NICKNAME')
 account.save!
 
-unless Post.count > 50
-  channel = Channel.find_or_create_by name: 'Tech'
-  account.client.timeline.each do |tweet|
-    Post.find_or_create_by(text: tweet.text) do |post|
-      post.channel = channel
-    end
+Slot.destroy_all
+Post.destroy_all
+
+channel = Channel.find_or_create_by name: 'Tech'
+account.client.timeline.take(100).each do |tweet|
+  Post.find_or_create_by(text: tweet.text) do |post|
+    post.channel = channel
   end
 end
 
 slot_time = Time.zone.now
-Slot.destroy_all
 posts = Post.find_each.cycle
 250.times do
-  Slot.create(post: posts.next, publish_at: slot_time+1.hour)
+  Slot.create(post: posts.next, publish_at: slot_time+=5.minutes)
 end
