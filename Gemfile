@@ -11,7 +11,6 @@ gem "uglifier", ">= 1.3.0"
 gem "jquery-rails"
 gem "sprockets-es6"
 gem "turbolinks"
-gem "react_on_rails", "~> 5"
 
 gem "active_model_serializers", "~> 0.10.0.rc1"
 
@@ -46,7 +45,6 @@ gem "twitter"
 gem "sinatra", require: false
 gem "sidekiq"
 # gem "sidetiq"
-
 gem "ice_cube"
 
 gem "email_validator"
@@ -60,28 +58,26 @@ group :development, :test do
   gem "pry-byebug"
   gem "awesome_print"
   gem "dotenv-rails"
-  gem "rubocop"
-  gem "web-console", "~> 2.0"
   gem "spring"
 end
 
 group :development do
+  gem "annotate"
   gem "better_errors"
   gem "guard-bundler"
   gem "guard-rails"
   gem "quiet_assets"
   gem "rails_layout"
+  gem "web-console", "~> 2.0"
   gem "rb-fchange", require: false
   gem "rb-fsevent", require: false
   gem "rb-inotify", require: false
-  gem "annotate"
+  gem "rubocop", require: false
+  gem "ruby-lint", require: false
+  gem "scss_lint", require: false
 end
 
 group :test do
-  gem "minitest-rails-capybara"
-  # gem "minitest-metadata"
-  gem "m"
-  gem "rspec-mocks"
   gem "shoulda-matchers"
   gem "database_cleaner"
   gem "launchy"
@@ -90,6 +86,9 @@ group :test do
   gem "timecop"
   gem "webmock"
   gem "vcr"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "guard-rspec"
 end
 
 gem "newrelic_rpm", ">= 3.7.3"

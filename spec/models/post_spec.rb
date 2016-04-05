@@ -1,9 +1,9 @@
-require "test_helper"
+require "rails_helper"
 
 describe Post do
   let(:post) { Post.new }
 
   it "must be valid" do
-    value(post).must_be :valid?
+    expect(post).to be_valid
   end
 end

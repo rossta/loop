@@ -29,5 +29,7 @@ module Loop
     config.active_job.queue_adapter = :sidekiq
 
     config.cache_store = :memory_store
+
+    config.paths.add "lib", eager_load: true
   end
 end

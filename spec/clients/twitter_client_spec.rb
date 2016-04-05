@@ -1,4 +1,4 @@
-require "test_helper"
+require "rails_helper"
 
 describe TwitterClient do
   let(:account) { double(token: token, secret: secret) }
@@ -15,7 +15,7 @@ describe TwitterClient do
   describe "#client" do
     it "wraps the twitter gem rest client" do
       twitter = client.client
-      twitter.must_be_instance_of ::Twitter::REST::Client
+      expect(twitter).to be_instance_of ::Twitter::REST::Client
     end
   end
 
@@ -38,7 +38,7 @@ describe TwitterClient do
           }].to_json,
           status: 200)
 
-        client.timeline.map(&:body).must_equal ['Waking up', 'Drinking coffee', 'Walking the dog']
+        expect(client.timeline.map(&:body)).to eq ['Waking up', 'Drinking coffee', 'Walking the dog']
     end
   end
 end

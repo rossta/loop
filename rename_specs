@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# find . -name '*$1*' -print | sed -e 's/^\(.*\)$1\(.*\)$/\1$1\2 \1$2\2 /g' | xargs -n2 mv
+find spec -name '*_test.rb' -print | sed -e 's/^\(.*\)_test.rb$/\1_test.rb \1_spec.rb /g' | xargs -n2 mv

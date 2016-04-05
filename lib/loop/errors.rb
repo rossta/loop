@@ -1,5 +1,5 @@
 module Loop
   Error = Class.new(StandardError)
 
-  SlotBroadcastError = Class.new(SlotError)
+  SlotBroadcastError = Class.new(Error)
 end
