@@ -9,7 +9,7 @@ gem "pg", "~> 0.15"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "jquery-rails"
-gem "sprockets-es6"
+gem "browserify-rails"
 gem "turbolinks"
 
 gem "active_model_serializers", "~> 0.10.0.rc1"
@@ -89,6 +89,7 @@ group :test do
   gem "rspec-rails"
   gem "capybara"
   gem "guard-rspec"
+  gem "timecop"
 end
 
 gem "newrelic_rpm", ">= 3.7.3"

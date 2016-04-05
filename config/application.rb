@@ -30,6 +30,10 @@ module Loop
 
     config.cache_store = :memory_store
 
+    # Auto/eager load lib/ directores
     config.paths.add "lib", eager_load: true
+
+    # Use ES2015 in asset pipeline
+    config.browserify_rails.commandline_options = "-t babelify"
   end
 end
