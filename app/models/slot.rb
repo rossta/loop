@@ -16,14 +16,16 @@ class Slot < ActiveRecord::Base
     !published?
   end
 
-  def broadcast(timestamp = self.publish_at)
-    raise Loop::SlotBroadcastError.new unless timestamp.to_i == publish_int
+  def broadcast(at: self.publish_at, force: false)
+    unless force || can_broadcast?(at: at)
+      raise Loop::SlotBroadcastError
+    end
 
     with_lock do
       update_attribute(:published_at, Time.zone.now)
     end
 
-    Rails.logger.info("Successful broadcast: #{slot}")
+    Rails.logger.info("Successful broadcast: #{self}")
     true
   end
 
@@ -45,5 +47,9 @@ class Slot < ActiveRecord::Base
 
     SlotBroadcastJob.set(wait_until: self.publish_at).
       perform_later(self, self.publish_int)
+  end
+
+  def can_broadcast?(at:)
+    self.publish_at && Time.zone.now >= self.publish_at && at.to_i == publish_int
   end
 end
