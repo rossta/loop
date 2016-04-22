@@ -66,7 +66,6 @@ group :development do
   gem "better_errors"
   gem "guard-bundler"
   gem "guard-rails"
-  gem "quiet_assets"
   gem "rails_layout"
   gem "web-console", "~> 2.0"
   gem "rb-fchange", require: false
@@ -89,7 +88,6 @@ group :test do
   gem "rspec-rails"
   gem "capybara"
   gem "guard-rspec"
-  gem "timecop"
 end
 
 gem "newrelic_rpm", ">= 3.7.3"
