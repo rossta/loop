@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # require "sidetiq/web"
   mount Sidekiq::Web => "/sidekiq"
 
+  get "rails-serviceworker" => "service_workers#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
