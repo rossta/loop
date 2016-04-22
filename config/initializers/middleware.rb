@@ -1,2 +1,2 @@
-Rails.application.config.middleware.insert_after ActionDispatch::Static, "Rack::ServiceWorker"
+Rails.application.config.middleware.insert_after Rack::Sendfile, "Rack::ServiceWorker"
 
