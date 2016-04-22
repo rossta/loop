@@ -1,3 +1,3 @@
-import IndexController from './controllers/index';
+import SWClient from './sw-client';
 
-new IndexController(document.querySelector('.main'));
+new SWClient();
