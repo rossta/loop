@@ -84,3 +84,7 @@ test:
 #   database: loop_production
 #   username: loop
 #   password: <%= ENV['LOOP_DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: loop_development
