@@ -1,0 +1,40 @@
+const version = 'v20160421.1';
+
+const offlineResources = [
+  '/favicon.ico',
+  '<%= asset_path('application.js') %>',
+  '<%= asset_path('application.css') %>',
+];
+
+//////////
+// Install
+//////////
+
+function onInstall(event) {
+  log('install event in progress.');
+
+  event.waitUntil(cacheOfflineResources());
+}
+
+function cacheOfflineResources() {
+  return caches
+    .open(cacheKey('offline'))
+    .then((cache) => {
+      return cache.addAll(offlineResources);
+    })
+    .then(() => {
+      log('installation complete!');
+    });
+}
+
+function cacheKey() {
+  return [version, ...arguments].join(':');
+}
+
+function log() {
+  console.log("[ServiceWorker]", ...arguments);
+}
+
+self.addEventListener('install', onInstall);
+
+log("update loaded!");

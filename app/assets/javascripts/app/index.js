@@ -1,3 +1,1 @@
-import SWClient from './sw-client';
-
-new SWClient();
+console.log('app ready');
