@@ -1,4 +1,8 @@
-# README
+# Queue Loop
+
+A work-in-progress. Social marketing or something. Ruby on Rails.
+
+## About
 
 This README would normally document whatever steps are necessary to get the application up and running.
 
