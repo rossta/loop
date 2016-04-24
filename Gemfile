@@ -50,6 +50,8 @@ gem "ice_cube"
 gem "email_validator"
 gem "recipient_interceptor"
 
+gem "serviceworker-rails", github: "rossta/serviceworker-rails", branch: "master"
+
 group :development, :test do
   gem "factory_girl_rails"
   gem "faker"
