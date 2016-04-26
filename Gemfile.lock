@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rossta/serviceworker-rails.git
-  revision: 4cee1c77d6fc6fac8518ab031e4240fef48c7eac
+  revision: 8608fe54a5a0978b2dbbb37c69f27ce4e63a8f61
   branch: master
   specs:
     serviceworker-rails (0.1.0)
