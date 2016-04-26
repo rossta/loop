@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/rossta/serviceworker-rails.git
-  revision: 8608fe54a5a0978b2dbbb37c69f27ce4e63a8f61
+  revision: 5b3d380e9b6ca27431becc160d74f6d888c64204
   branch: master
   specs:
-    serviceworker-rails (0.1.0)
+    serviceworker-rails (0.2.0)
       railties (>= 3.1)
 
 GEM
@@ -154,6 +154,7 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashdiff (0.3.0)
+    hashie (3.4.3)
     high_voltage (2.4.0)
     highline (1.7.8)
     http (1.0.2)
@@ -212,6 +213,16 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth (0.5.1)
+    omniauth (1.3.1)
+      hashie (>= 1.2, < 4)
+      rack (>= 1.0, < 3)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (1.2.1)
+      json (~> 1.3)
+      omniauth-oauth (~> 1.1)
     parser (2.3.0.6)
       ast (~> 2.2)
     pg (0.18.4)
@@ -236,6 +247,8 @@ GEM
     puma (3.1.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -434,6 +447,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   newrelic_rpm (>= 3.7.3)
+  omniauth-twitter
   pg (~> 0.15)
   poltergeist
   pry-byebug
@@ -441,6 +455,7 @@ DEPENDENCIES
   pry-rescue
   puma
   pundit
+  quiet_assets
   rack-protection
   rails (= 4.2.6)
   rails_layout

@@ -47,6 +47,8 @@ gem "sidekiq"
 # gem "sidetiq"
 gem "ice_cube"
 
+gem "omniauth-twitter"
+
 gem "email_validator"
 gem "recipient_interceptor"
 
@@ -70,6 +72,7 @@ group :development do
   gem "guard-rails"
   gem "rails_layout"
   gem "web-console", "~> 2.0"
+  gem "quiet_assets"
   gem "rb-fchange", require: false
   gem "rb-fsevent", require: false
   gem "rb-inotify", require: false

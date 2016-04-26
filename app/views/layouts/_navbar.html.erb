@@ -1,0 +1,24 @@
+<div class="container">
+  <nav class="navbar">
+    <div class="container">
+      <ul class="navbar-list">
+        <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+        <li class="navbar-item">
+          <a class="navbar-link" href="#" data-popover="#codeNavPopover">Code</a>
+          <div id="codeNavPopover" class="popover">
+            <ul class="popover-list">
+              <li class="popover-item">
+                <a class="popover-link" href="#example">Example</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <% if user_signed_in? %>
+          <li class="navbar-item"><a class="navbar-link" href="#"><%= current_user.display_name %></a></li>
+        <% else %>
+          <li class="navbar-item"><a class="navbar-link" href="/auth/twitter">Login</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
